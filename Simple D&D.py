@@ -4,7 +4,7 @@ totalnumber = 0
 print("1: Duke\n2: Mordekai\n3: Sid\n4: Wrench")
 character = input("Insert character being used: ")
 print()
-print("-" * 172)
+print("-" * 133)
 if character == "1":
     while True:
         while True:
@@ -17,7 +17,7 @@ if character == "1":
             totalnumber += int(numbers[x])
         print("Total:", totalnumber)
         print()
-        print("-" * 172)
+        print("-" * 133)
         numbers.clear()
         totalnumber = 0
 if character == "2":
@@ -36,7 +36,7 @@ if character == "2":
             totalnumber += int(numbers[x])
         print("Total:", totalnumber)
         print()
-        print("-" * 172)
+        print("-" * 133)
         numbers.clear()
         totalnumber = 0
 if character == "3":
@@ -55,7 +55,7 @@ if character == "3":
             totalnumber += int(numbers[x])
         print("Total:", totalnumber)
         print()
-        print("-" * 172)
+        print("-" * 133)
         numbers.clear()
         totalnumber = 0
 if character == "4":
@@ -73,6 +73,6 @@ if character == "4":
             totalnumber += int(numbers[x])
         print("Total:", totalnumber)
         print()
-        print("-" * 172)
+        print("-" * 133)
         numbers.clear()
         totalnumber = 0

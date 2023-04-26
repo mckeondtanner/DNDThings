@@ -8,33 +8,33 @@ class Character:
         self.transhp = transhp
 
     def all(self):
-        print("Character: " + self.name)
+        print("\nCharacter: " + self.name)
         print("Maximum HP: " + str(self.maxhp))
         print("Current HP: " + str(self.hp))
         print("Current Temporary HP: " + str(self.temphp))
         print("Current Transform HP: " + str(self.transhp))
-        print("\n" + "-" * 172)
+        print("\n" + "-" * 133)
 
     def healhp(self, heal):
         self.hp += heal
         if self.hp > self.maxhp:
             self.hp = self.maxhp
-        print("Current HP: " + str(self.hp))
-        print("\n" + "-" * 172)
+        print("\nCurrent HP: " + str(self.hp))
+        print("\n" + "-" * 133)
     
     def healtranshp(self, heal):
         self.transhp += heal
         if self.transhp > self.maxtranshp:
             self.transhp = self.maxtranshp
-        print("Current Transform HP: " + str(self.transhp))
-        print("\n" + "-" * 172)
+        print("\nCurrent Transform HP: " + str(self.transhp))
+        print("\n" + "-" * 133)
     
     def gaintemphp(self, gain):
         if self.temphp > 0:
             self.temphp = 0
         self.temphp += gain
-        print("Current Temporary HP: " + str(self.temphp))
-        print("\n" + "-" * 172)
+        print("\nCurrent Temporary HP: " + str(self.temphp))
+        print("\n" + "-" * 133)
     
     def gaintransformhp(self, gain):
         if self.maxtranshp > 0:
@@ -42,21 +42,21 @@ class Character:
             self.maxtranshp = 0
         self.transhp = gain
         self.maxtranshp = gain
-        print("Current Transform HP: " + str(self.transhp))
-        print("\n" + "-" * 172)
+        print("\nCurrent Transform HP: " + str(self.transhp))
+        print("\n" + "-" * 133)
 
     def hpdamage(self, damage):
         self.hp -= damage
         if self.hp > 0:
-            print("Current HP: " + str(self.hp))
-            print("\n" + "-" * 172)
+            print("\nCurrent HP: " + str(self.hp))
+            print("\n" + "-" * 133)
         elif self.hp <= 0 and self.hp > -(self.maxhp):
-            print(self.name + " is unconscious.")
-            print("\n" + "-" * 172)
+            print("\n" + self.name + " is unconscious.")
+            print("\n" + "-" * 133)
             self.hp = 0
         else:
-            print(self.name + " is dead.")
-            print("\n" + "-" * 172)
+            print("\n" + self.name + " is dead.")
+            print("\n" + "-" * 133)
             self.hp = 0
         
     def tempdamage(self, damage):
@@ -66,14 +66,14 @@ class Character:
             self.temphp = 0
             self.hpdamage(storage)
         else:
-            print("Current Temporary HP: " + str(self.temphp))
-            print("\n" + "-" * 172)
+            print("\nCurrent Temporary HP: " + str(self.temphp))
+            print("\n" + "-" * 133)
     
     def transdamage(self, damage):
         self.transhp -= damage
         if self.transhp > 0:
-            print("Current Transform HP: " + str(self.transhp))
-            print("\n" + "-" * 172)
+            print("\nCurrent Transform HP: " + str(self.transhp))
+            print("\n" + "-" * 133)
         else:
             storage = -(self.transhp)
             self.transhp = 0
@@ -83,9 +83,9 @@ class Character:
     def temptransdamage(self, damage):
         self.temphp -= damage
         if self.temphp > 0:
-            print("Current Temporary HP: " + str(self.temphp))
+            print("\nCurrent Temporary HP: " + str(self.temphp))
             print("Current Transform HP: " + str(self.transhp))
-            print("\n" + "-" * 172)
+            print("\n" + "-" * 133)
         elif self.temphp <= 0:
             storage = -(self.temphp)
             self.temphp = 0
@@ -110,19 +110,19 @@ def validchar(char):
     else:
         return ""
 
-Mordekai = Character("Mordekai", 29, 29, 0, 0, 0)
-Sid = Character("Sid", 59, 59, 0, 0, 0)
-Wrench = Character("Wrench", 46, 46, 0, 0, 0)
+Mordekai = Character("Miro", 51, 51, 0, 0, 0)
+Sid = Character("Sid", 77, 77, 0, 0, 0)
+Wrench = Character("Wrench", 52, 52, 0, 0, 0)
 
 while True:
-    print("1: Mordekai\n2: Sid\n3: Wrench")
+    print("1: Miro\n2: Sid\n3: Wrench")
     char = input("Insert Character: ")
-    print("\n" + "-" * 172)
+    print("\n" + "-" * 133)
     if char == "1":
         while True:
-            print("1: Damage\n2: Heal\n3: Temporary HP\n4: Transform HP\n5: Long Rest\n6: See All HP")
+            print("\n1: Damage\n2: Heal\n3: Temporary HP\n4: Transform HP\n5: Long Rest\n6: See All HP")
             edit = input("Insert Damage, Heal, Temp HP, Transform HP, Long Rest, or All: ")
-            print("\n" + "-" * 172)
+            print("\n" + "-" * 133)
             if edit == "1":
                 damage = input("Insert damage taken: ")
                 if Mordekai.temphp > 0 and Mordekai.maxtranshp > 0:
@@ -155,7 +155,7 @@ while True:
         while True:
             print("1: Damage\n2: Heal\n3: Temporary HP\n4: Transform HP\n5: Long Rest\n6: See All HP")
             edit = input("Insert Damage, Heal, Temp HP, Transform HP, Long Rest, or All: ")
-            print("\n" + "-" * 172)
+            print("\n" + "-" * 133)
             if edit == "1":
                 damage = input("Insert damage taken: ")
                 if Sid.temphp > 0 and Sid.maxtranshp > 0:
@@ -188,7 +188,7 @@ while True:
         while True:
             print("1: Damage\n2: Heal\n3: Temporary HP\n4: Transform HP\n5: Long Rest\n6: See All HP")
             edit = input("Insert Damage, Heal, Temp HP, Transform HP, Long Rest, or All: ")
-            print("\n" + "-" * 172)
+            print("\n" + "-" * 133)
             if edit == "1":
                 damage = input("Insert damage taken: ")
                 if Wrench.temphp > 0 and Wrench.maxtranshp > 0:
